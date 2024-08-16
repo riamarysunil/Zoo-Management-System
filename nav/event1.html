@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="event1.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> -->
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/images/zoo.png" alt="Zoo Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="event1.html">Events</a></li>
+                <li><a href="/nav/membership.html">Membership</a></li>
+                <li>
+                    <div id="plan" class="plan-section">
+                        Plan Your Visit &#9660;
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <a href="/plan/hours.html">Hours and Admissions</a>
+                                <a href="/plan/tour.html">Tours and Experience</a>
+                                <a href="/plan/exp.html">Animal Encounters</a>
+                                <a href="/plan/rides.html">Thrills and Adventures</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="animal.html">Animals</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="aboutus1.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img src="/images/EVENTS.png" alt="Responsive Image" id="bgimg">
+    <main>
+        <section class="intro">
+            <p>Join us for a variety of exciting events throughout the year! From seasonal festivals to educational
+                workshops, there's always something happening at the Columbus Zoo. Explore our events and find the
+                perfect activity for you and your family.</p>
+        </section>
+        <section class="dropdown1-section">
+            <div class="dropdown1">
+                <button class="dropbtn1">Event Categories</button>
+                <div class="dropdown1-content">
+                    <a href="#" onclick="filterEvents('all'); return false;">All Events</a>
+                    <a href="#" onclick="filterEvents('festivals'); return false;">Festivals</a>
+                    <a href="#" onclick="filterEvents('seasonal-events'); return false;">Seasonal Events</a>
+                    <a href="#" onclick="filterEvents('educational-programs'); return false;">Educational Programs</a>
+                </div>
+            </div>
+        </section>
+        <section class="events-list">
+            <article class="event-item festivals">
+                <img src="/images/summer-festival.jpg" alt="Summer Festival">
+                <div class="event-details">
+                    <h2>Summer Festival</h2>
+                    <p>Date: July 15 - August 15, 2024</p>
+                    <p>Celebrate the summer with fun activities, food stalls, live music, and much more!</p>
+                </div>
+            </article>
+
+            <article class="event-item seasonal-events">
+                <img src="/images/halloween-bash.jpg" alt="Halloween Bash">
+                <div class="event-details">
+                    <h2>Halloween Bash</h2>
+                    <p>Date: October 31, 2024</p>
+                    <p>Dress up in your spookiest costume and join us for a night of Halloween fun at the zoo.</p>
+                </div>
+            </article>
+
+            <article class="event-item seasonal-events">
+                <img src="/images/christmas-wonderland.jpg" alt="Christmas Wonderland">
+                <div class="event-details">
+                    <h2>Christmas Wonderland</h2>
+                    <p>Date: December 1 - December 31, 2024</p>
+                    <p>Experience the magic of Christmas with festive lights, holiday performances, and special treats.
+                    </p>
+                </div>
+            </article>
+
+            <article class="event-item seasonal-events">
+                <img src="/images/spring-fling.jpg" alt="Spring Fling">
+                <div class="event-details">
+                    <h2>Spring Fling</h2>
+                    <p>Date: April 10 - April 20, 2025</p>
+                    <p>Welcome the spring season with flower shows, petting zoos, and outdoor games for the whole
+                        family.</p>
+                </div>
+            </article>
+
+            <article class="event-item educational-programs">
+                <img src="/images/earth-day.jpg" alt="Earth Day">
+                <div class="event-details">
+                    <h2>Earth Day Celebration</h2>
+                    <p>Date: April 22, 2025</p>
+                    <p>Join us in celebrating Earth Day with educational exhibits, eco-friendly workshops, and more.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section contact-details">
+                <h3>Contact Us</h3>
+                <p>Email: info@zooname.org</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="/images/facebook-logo.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <img src="/images/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Youtube">
+                        <img src="/images/social (1).png" alt="Youtube">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="/images/social.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section site-links">
+                <a href="/nav/aboutus1.html" class="footer-link">About Us</a>
+                <a href="/nav/event1.html" class="footer-link">Events</a>
+                <a href="membership.html" class="footer-link">Membership</a>
+                <a href="/nav/donate.html" class="footer-link">Donate</a>
+            </div>            
+        </div>
+    </footer>
+    
+    <script>
+        function filterEvents(category) {
+            var events = document.getElementsByClassName('event-item');
+            for (var i = 0; i < events.length; i++) {
+                if (category === 'all') {
+                    events[i].style.display = 'block';
+                } else {
+                    if (events[i].classList.contains(category)) {
+                        events[i].style.display = 'block';
+                    } else {
+                        events[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

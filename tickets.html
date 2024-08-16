@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Ticketing</title>
+    <link rel="stylesheet" href="/css/styles_ticket.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="images/zoo.png" alt="Zoo Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/nav/event1.html">Events</a></li>
+                <li><a href="/nav/membership.html">Membership</a></li>
+                <li>
+                    <div id="plan" class="plan-section">
+                        Plan Your Visit &#9660;
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <a href="/plan/hours.html">Hours and Admissions</a>
+                                <a href="/plan/tour.html">Tours and Experience</a>
+                                <a href="/plan/exp.html">Animal Encounters</a>
+                                <a href="/plan/rides.html">Thrills and Adventures</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/nav/animal.html">Animals</a></li>
+                <li><a href="/nav/donate.html">Donate</a></li>
+                <li><a href="/nav/aboutus1.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="cta">
+            <button id="cartBtn">Cart</button>
+        </div>
+    </header>
+    <img id="bgimg" src="images/TICKETS.png" alt="">
+    <main>
+        <div class="ticket-container">
+            <div id="adult-ticket" class="ticket-item">
+                <h2>Adult Ticket</h2>
+                <p>Enjoy a full day at the zoo with unlimited access to all exhibits and shows. Ideal for visitors aged
+                    13-64.</p>
+                <p class="price">$20.00</p>
+                <button class="add-to-cart" data-ticket="adult-ticket">Add to Cart</button>
+                <div class="quantity-controls" style="display: none;">
+                    <button class="quantity-button" data-action="decrease">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-button" data-action="increase">+</button>
+                </div>
+            </div>
+            <div id="child-ticket" class="ticket-item">
+                <h2>Child Ticket</h2>
+                <p>Special rate for children aged 3-12. Includes all exhibits and shows. Children under 3 enter free.
+                </p>
+                <p class="price">$10.00</p>
+                <button class="add-to-cart" data-ticket="child-ticket">Add to Cart</button>
+                <div class="quantity-controls" style="display: none;">
+                    <button class="quantity-button" data-action="decrease">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-button" data-action="increase">+</button>
+                </div>
+            </div>
+            <div id="group-ticket-5" class="ticket-item">
+                <h2>Group Ticket (5)</h2>
+                <p>Discounted rate for groups of 5. Perfect for small family outings or friends.</p>
+                <p class="price">$90.00</p>
+                <button class="add-to-cart" data-ticket="group-ticket-5">Add to Cart</button>
+                <div class="quantity-controls" style="display: none;">
+                    <button class="quantity-button" data-action="decrease">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-button" data-action="increase">+</button>
+                </div>
+            </div>
+            <div id="group-ticket-10" class="ticket-item">
+                <h2>Group Ticket (10)</h2>
+                <p>Discounted rate for groups of 10. Ideal for larger groups or corporate events.</p>
+                <p class="price">$170.00</p>
+                <button class="add-to-cart" data-ticket="group-ticket-10">Add to Cart</button>
+                <div class="quantity-controls" style="display: none;">
+                    <button class="quantity-button" data-action="decrease">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-button" data-action="increase">+</button>
+                </div>
+            </div>
+            <div id="family-ticket" class="ticket-item">
+                <p>Great value for a family of up to 4 members. Includes access to all exhibits and shows.</p>
+                <h2>Family Ticket</h2>
+                <p class="price">$50.00</p>
+                <button class="add-to-cart" data-ticket="family-ticket">Add to Cart</button>
+                <div class="quantity-controls" style="display: none;">
+                    <button class="quantity-button" data-action="decrease">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-button" data-action="increase">+</button>
+                </div>
+            </div>
+            <div id="student-ticket" class="ticket-item">
+                <h2>Student Ticket</h2>
+                <p>Special rate for students with valid student ID. Includes all exhibits and shows.</p>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart" data-ticket="student-ticket">Add to Cart</button>
+                <div class="quantity-controls" style="display: none;">
+                    <button class="quantity-button" data-action="decrease">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-button" data-action="increase">+</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-popup" class="popup">
+        <div class="popup-content">
+            <span id="close-popup" class="close-popup">&times;</span>
+            <h2 style="padding-bottom: 15px;">Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <p>Total Price: $<span id="total-price">0.00</span></p>
+                <button id="checkoutBtn" class="checkout-button">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-details-form" class="popup hidden">
+        <div class="popup-content">
+            <span id="close-details-form" class="close-popup">&times;</span>
+            <h2 style="padding-bottom: 15px;">User Details</h2>
+            <form id="detailsForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="mobile">Mobile:</label>
+                <input type="tel" id="mobile" required>
+                <label for="payment">Payment Method:</label>
+                <select id="payment" required>
+                    <option value="payment">Stripe</option>
+                    <option value="payment">Other</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="buffering-page" class="popup hidden">
+        <div class="popup-content">
+            <h2>Processing Payment...</h2>
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <div id="confirmation-page" class="popup hidden">
+        <div class="popup-content">
+            <span id="close-confirmation-page" class="close-popup">&times;</span>
+            <h2>Payment Confirmed</h2>
+            <div class="green-tick">&#10004;</div>
+            <p>Total Amount: $<span id="confirmation-total-price">0.00</span></p>
+            <p>Thank you for your purchase!</p>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section contact-details">
+                <h3>Contact Us</h3>
+                <p>Email: info@zooname.org</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="/images/facebook-logo.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <img src="/images/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Youtube">
+                        <img src="/images/social (1).png" alt="Youtube">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="/images/social.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section site-links">
+                <a href="nav/aboutus1.html" class="footer-link">About Us</a>
+                <a href="nav/event1.html" class="footer-link">Events</a>
+                <a href="membership.html" class="footer-link">Membership</a>
+                <a href="/nav/donate.html" class="footer-link">Donate</a>
+            </div>            
+        </div>
+    </footer>
+
+    <script src="js/main_ticket.js"></script>
+</body>
+
+</html>

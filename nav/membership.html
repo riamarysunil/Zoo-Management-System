@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership</title>
+    <link rel="stylesheet" href="membership.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/images/zoo.png" alt="Zoo Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/nav/event1.html">Events</a></li>
+                <li><a href="/nav/membership.html">Membership</a></li>
+                <li>
+                    <div id="plan" class="plan-section">
+                        Plan Your Visit &#9660;
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <a href="/plan/hours.html">Hours and Admissions</a>
+                                <a href="/plan/tour.html">Tours and Experience</a>
+                                <a href="/plan/exp.html">Animal Encounters</a>
+                                <a href="/plan/rides.html">Thrills and Adventures</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/nav/animal.html">Animals</a></li>
+                <li><a href="/nav/donate.html">Donate</a></li>
+                <li><a href="/nav/aboutus1.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="membership-plans">
+            <h2>Membership Plans</h2>
+            <div class="plans-container">
+                <div class="membership-plan">
+                    <h3>Basic Plan</h3>
+                    <p>Enjoy unlimited access to the zoo during open hours, exclusive members-only events, and a 10% discount at the gift shop.</p>
+                    <p><strong>Price: $50/year</strong></p>
+                    <button class="btn" onclick="openModal('Basic Plan')">Sign Up</button>
+                </div>
+                <div class="membership-plan">
+                    <h3>Premium Plan</h3>
+                    <p>Includes all Basic Plan benefits plus free parking, a complimentary guest pass each visit, and a 20% discount at the gift shop.</p>
+                    <p><strong>Price: $100/year</strong></p>
+                    <button class="btn" onclick="openModal('Premium Plan')">Sign Up</button>
+                </div>
+                <div class="membership-plan">
+                    <h3>Family Plan</h3>
+                    <p>Designed for families, this plan offers unlimited zoo access for up to 5 family members, special family events, and a 15% discount at the gift shop.</p>
+                    <p><strong>Price: $150/year</strong></p>
+                    <button class="btn" onclick="openModal('Family Plan')">Sign Up</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Sign Up for <span id="planName"></span></h2>
+            <form id="signupForm" onsubmit="return goToPaymentPage(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section contact-details">
+                <h3>Contact Us</h3>
+                <p>Email: info@zooname.org</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="/images/facebook-logo.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <img src="/images/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Youtube">
+                        <img src="/images/social (1).png" alt="Youtube">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="/images/social.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section site-links">
+                <a href="nav/aboutus1.html" class="footer-link">About Us</a>
+                <a href="nav/event1.html" class="footer-link">Events</a>
+                <a href="membership.html" class="footer-link">Membership</a>
+                <a href="/nav/donate.html" class="footer-link">Donate</a>
+            </div>            
+        </div>
+    </footer>
+    <script>
+        // JavaScript for handling modal functionality and form submission
+        function openModal(planName) {
+            document.getElementById('planName').innerText = planName;
+            document.getElementById('signupModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        function goToPaymentPage(event) {
+            event.preventDefault();
+            window.location.href = 'membership_payment.html';
+        }
+    </script>
+</body>
+</html>

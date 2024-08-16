@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Payment</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .payment-container h2 {
+            margin-top: 0;
+            font-size: 2em;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        .success-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .return-home {
+            display: none;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .return-home:hover {
+            background-color: #0056b3;
+        }
+
+        .payment-method-details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment Information</h2>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="paymentMethod">Select Payment Method</label>
+                <select id="paymentMethod" name="paymentMethod" required onchange="showPaymentMethodDetails()">
+                    <option value="">--Select Payment Method--</option>
+                    <option value="card">Card</option>
+                    <option value="upi">UPI</option>
+                    <option value="gpay">Google Pay</option>
+                </select>
+            </div>
+
+            <!-- Card Details -->
+            <div id="cardDetails" class="payment-method-details">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber">
+                </div>
+                <div class="form-group">
+                    <label for="cardName">Cardholder Name</label>
+                    <input type="text" id="cardName" name="cardName">
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv">
+                </div>
+            </div>
+
+            <!-- UPI Details -->
+            <div id="upiDetails" class="payment-method-details">
+                <div class="form-group">
+                    <label for="upiId">UPI ID</label>
+                    <input type="text" id="upiId" name="upiId">
+                </div>
+            </div>
+
+            <!-- Google Pay Details -->
+            <div id="gpayDetails" class="payment-method-details">
+                <div class="form-group">
+                    <label for="gpayNumber">Google Pay Number</label>
+                    <input type="text" id="gpayNumber" name="gpayNumber">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit Payment</button>
+            </div>
+        </form>
+        <div class="success-message" id="successMessage">Payment Successful!</div>
+        <button class="return-home" id="returnHomeButton" onclick="returnHome()">Return</button>
+    </div>
+
+    <script>
+        function showPaymentMethodDetails() {
+            // Hide all payment method details
+            document.querySelectorAll('.payment-method-details').forEach(function(element) {
+                element.style.display = 'none';
+            });
+
+            // Get selected payment method
+            const paymentMethod = document.getElementById('paymentMethod').value;
+
+            // Show selected payment method details
+            if (paymentMethod === 'card') {
+                document.getElementById('cardDetails').style.display = 'block';
+            } else if (paymentMethod === 'upi') {
+                document.getElementById('upiDetails').style.display = 'block';
+            } else if (paymentMethod === 'gpay') {
+                document.getElementById('gpayDetails').style.display = 'block';
+            }
+        }
+
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your payment processing logic here
+
+            // Show the success message and return home button
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('returnHomeButton').style.display = 'block';
+        });
+
+        function returnHome() {
+            window.location.href = 'membership.html'; 
+        }
+    </script>
+</body>
+</html>

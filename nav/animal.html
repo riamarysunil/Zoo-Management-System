@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Info</title>
+    <link rel="stylesheet" href="animal.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header id="header1">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/images/zoo.png" alt="Zoo Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/nav/event1.html">Events</a></li>
+                <li><a href="/nav/membership.html">Membership</a></li>
+                <li>
+                    <div class="plan-section">
+                        Plan Your Visit &#9660;
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <a href="hours.html">Hours and Admissions</a>
+                                <a href="tour.html">Tours and Experience</a>
+                                <a href="exp.html">Animal Encounters</a>
+                                <a href="rides.html">Thrills and Adventures</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="animal.html">Animals</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="aboutus1.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="video-background">
+        <video autoplay muted loop id="video-bg">
+            <source src="/images/82399-578640983_small.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content-overlay">
+            <section id="welcome" class="main-content">
+                <h1>ANIMALS</h1>
+            </section>
+        </div>
+    </main>
+    <section class="drop1">
+        <div class="dropdown1">
+            <button class="dropbtn1">Animal Categories</button>
+            <div class="dropdown1-content">
+                <a href="#" onclick="filterAnimals('all')">All</a>
+                <a href="#" onclick="filterAnimals('mammals')">Mammals</a>
+                <a href="#" onclick="filterAnimals('birds')">Birds</a>
+                <a href="#" onclick="filterAnimals('reptiles')">Reptiles</a>
+                <a href="#" onclick="filterAnimals('aquatic')">Aquatic</a>
+                <a href="#" onclick="filterAnimals('amphibians')">Amphibians</a>
+                <a href="#" onclick="filterAnimals('insects')">Insects</a>
+            </div>
+        </div>
+    </section>
+    
+    <main>
+        <div class="animal-grid" id="animalGrid">
+            <div class="animal-card" data-category="mammals">
+                <img src="/images/african_lion.jpg" alt="African Lion">
+                <h3>African Lion</h3>
+                <p>The African lion is known for its majestic appearance and strength. These lions live in prides and are primarily found in sub-Saharan Africa.</p>
+            </div>
+            <div class="animal-card" data-category="mammals">
+                <img src="/images/asian_lion.jpg" alt="Asian Lion">
+                <h3>Asian Lion</h3>
+                <p>The Asian lion, smaller and shyer than its African counterpart, resides in the Gir Forest of India. Conservation efforts are crucial for its survival.</p>
+            </div>
+            <div class="animal-card" data-category="mammals">
+                <img src="/images/bengal_tiger.jpg" alt="Bengal Tiger">
+                <h3>Bengal Tiger</h3>
+                <p>The Bengal tiger is the most numerous tiger subspecies. Known for their power and beauty, they are found in India, Bangladesh, Bhutan, and Nepal.</p>
+            </div>
+            <div class="animal-card" data-category="mammals">
+                <img src="/images/siberian_tiger.jpg" alt="Siberian Tiger">
+                <h3>Siberian Tiger</h3>
+                <p>The Siberian tiger, the largest tiger species, roams the forests of eastern Russia. They are renowned for their strength and resilience in harsh climates.</p>
+            </div>
+            <!-- Birds -->
+            <div class="animal-card" data-category="birds">
+                <img src="/images/bald_eagle.jpg" alt="Bald Eagle">
+                <h3>Bald Eagle</h3>
+                <p>The bald eagle, a symbol of strength and freedom, is native to North America. They are known for their powerful build and keen eyesight.</p>
+            </div>
+            <div class="animal-card" data-category="birds">
+                <img src="/images/scarlet_macaw.jpg" alt="Scarlet Macaw">
+                <h3>Scarlet Macaw</h3>
+                <p>The scarlet macaw, with its vibrant plumage, is a standout in the tropical forests of Central and South America. They are highly social and intelligent birds.</p>
+            </div>
+            <!-- Reptiles -->
+            <div class="animal-card" data-category="reptiles">
+                <img src="/images/nile_crocodile.jpg" alt="Nile Crocodile">
+                <h3>Nile Crocodile</h3>
+                <p>The Nile crocodile, found throughout sub-Saharan Africa, is a formidable predator. Known for their size and strength, they inhabit freshwater environments.</p>
+            </div>
+            <div class="animal-card" data-category="reptiles">
+                <img src="/images/king_cobra.jpg" alt="King Cobra">
+                <h3>King Cobra</h3>
+                <p>The king cobra, the world's longest venomous snake, is found in forests from India to Southeast Asia. They are revered and feared for their potent venom.</p>
+            </div>
+            <!-- Aquatic -->
+            <div class="animal-card" data-category="aquatic">
+                <img src="/images/blue_whale.jpg" alt="Blue Whale">
+                <h3>Blue Whale</h3>
+                <p>The blue whale, the largest animal ever known to have lived, roams the world's oceans. They are gentle giants that primarily feed on krill.</p>
+            </div>
+            <div class="animal-card" data-category="aquatic">
+                <img src="/images/clownfish.jpg" alt="Clownfish">
+                <h3>Clownfish</h3>
+                <p>Clownfish, made famous by the movie Finding Nemo, live among sea anemones in warm ocean waters. They are known for their bright colors and unique relationship with anemones.</p>
+            </div>
+            <!-- Amphibians -->
+            <div class="animal-card" data-category="amphibians">
+                <img src="/images/red_eye_tree_frog.jpg" alt="Red-Eyed Tree Frog">
+                <h3>Red-Eyed Tree Frog</h3>
+                <p>The red-eyed tree frog, with its striking red eyes and green body, is a nocturnal inhabitant of Central American rainforests. They are known for their vivid appearance.</p>
+            </div>
+            <div class="animal-card" data-category="amphibians">
+                <img src="/images/axolotl.jpg" alt="Axolotl">
+                <h3>Axolotl</h3>
+                <p>The axolotl, a unique amphibian native to Mexico, is known for its ability to regenerate limbs. They are critically endangered in the wild.</p>
+            </div>
+            <!-- Insects -->
+            <div class="animal-card" data-category="insects">
+                <img src="/images/monarch_butterfly.jpg" alt="Monarch Butterfly">
+                <h3>Monarch Butterfly</h3>
+                <p>The monarch butterfly is renowned for its long migration from North America to central Mexico. They are a symbol of transformation and endurance.</p>
+            </div>
+            <div class="animal-card" data-category="insects">
+                <img src="/images/praying_mantis.jpg" alt="Praying Mantis">
+                <h3>Praying Mantis</h3>
+                <p>The praying mantis, named for its prayer-like stance, is a master of camouflage and an adept predator of insects. They are found in temperate and tropical habitats worldwide.</p>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section contact-details">
+                <h3>Contact Us</h3>
+                <p>Email: info@zooname.org</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="/images/facebook-logo.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <img src="/images/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Youtube">
+                        <img src="/images/social (1).png" alt="Youtube">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="/images/social.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section site-links">
+                <a href="/nav/aboutus1.html" class="footer-link">About Us</a>
+                <a href="/nav/event1.html" class="footer-link">Events</a>
+                <a href="membership.html" class="footer-link">Membership</a>
+                <a href="/nav/donate.html" class="footer-link">Donate</a>
+            </div>            
+        </div>
+    </footer> 
+    <script>
+        function filterAnimals(category) {
+            const animalCards = document.querySelectorAll('.animal-card');
+
+            animalCards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (cardCategory === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

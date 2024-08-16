@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Name - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/zoo.png" alt="Zoo Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/nav/event1.html">Events</a></li>
+                <li><a href="nav/membership.html">Membership</a></li>
+                <li>
+                    <div id="plan" class="plan-section">
+                        Plan Your Visit &#9660;
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <a href="plan/hours.html">Hours and Admissions</a>
+                                <a href="plan/tour.html">Tours and Experience</a>
+                                <a href="plan/exp.html">Animal Encounters</a>
+                                <a href="plan/rides.html">Thrills and Adventures</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="nav/animal.html">Animals</a></li>
+                <li><a href="nav/donate.html">Donate</a></li>
+                <li><a href="nav/aboutus1.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="cta">
+            <button id="loginBtn" class="button">Log In</button>
+            <button id="signupBtn" class="button">Sign In</button>
+        </div>
+    </header>
+    <main id="main" class="video-background">
+        <video autoplay muted loop id="video-bg">
+            <source src="/images/Untitled design (1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content-overlay">
+            <section id="welcome" class="main-content">
+                <h1>Welcome to Zoo Name</h1>
+                <p>Get a Chance to Roam with the Wild – Grab Your Zoo Tickets Now!</p>
+                <a href="tickets.html" class="button buy-tickets">Buy Tickets</a>
+            </section>
+        </div>
+    </main>
+    <section id="info" class="info-section">
+        <div class="info-content info-content1">
+            <p>Discover upcoming zoo events <br>and attractions.</p>
+            <a href="/nav/event1.html" class="button explore-button">Events</a>
+        </div>
+        <div class="info-content info-content2">
+            <p>Learn about our diverse animal species <br>and habitats.</p>
+            <a href="/nav/animal.html" class="button explore-button">Explore</a>
+        </div>
+        <div class="info-content info-content3">
+            <p>Support our cause and make a difference<br> with your donation.</p>
+            <a href="/nav/donate.html" class="button explore-button">Donate</a>
+        </div>
+    </section>
+    <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+        <p id="confirmationText"></p>
+    </div>
+
+    <div id="loginSignupPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <div class="form-container">
+                <nav>
+                    <ul>
+                        <li><a href="#login" id="loginLink">Log In</a></li>
+                        <li><a href="#signup" id="signupLink">Sign In</a></li>
+                    </ul>
+                </nav>
+                <div id="loginForm" class="form-section active">
+                    <h2>Login</h2>
+                    <form id="loginFormElement">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <div class="form-bottom">
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                            <button type="submit" class="button">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="signupForm" class="form-section">
+                    <h2>Sign Up</h2>
+                    <form id="signupFormElement">
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                        <input type="tel" id="phoneNumber" placeholder="Mobile Number" required>
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <button type="submit" class="button">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section contact-details">
+                <h3>Contact Us</h3>
+                <p>Email: info@zooname.org</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="/images/facebook-logo.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <img src="/images/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Youtube">
+                        <img src="/images/social (1).png" alt="Youtube">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="/images/social.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section site-links">
+                <a href="nav/aboutus1.html" class="footer-link">About Us</a>
+                <a href="nav/event1.html" class="footer-link">Events</a>
+                <a href="membership.html" class="footer-link">Membership</a>
+                <a href="/nav/donate.html" class="footer-link">Donate</a>
+            </div>            
+        </div>
+    </footer>    
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
